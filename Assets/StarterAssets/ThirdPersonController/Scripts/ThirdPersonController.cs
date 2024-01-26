@@ -111,8 +111,8 @@ namespace StarterAssets
 
         private bool _hasAnimator;
 
-        [SerializeField] private GameObject line; 
-
+        [SerializeField] private GameObject line;
+        public static bool canShoot;
         private bool IsCurrentDeviceMouse
         {
             get
@@ -184,6 +184,7 @@ namespace StarterAssets
             {
                 line.SetActive(true);
                 _animator.SetBool("Aim", _input.aiming);
+                canShoot = true;
                 _animator.SetBool("Throw", _input.throwing);
             }
             else
@@ -191,6 +192,7 @@ namespace StarterAssets
                 _animator.SetBool("Aim", false);
                 _animator.SetBool("Throw", false);
                 _input.throwing = false;
+                canShoot = false;
                 line.SetActive(false);
             }
             if (_input.throwing)
