@@ -12,7 +12,9 @@ namespace StarterAssets
 		public Vector2 look;
 		public bool jump;
 		public bool sprint;
-
+		public bool chickenDance;
+		public bool aiming;
+		public bool throwing;
 		[Header("Movement Settings")]
 		public bool analogMovement;
 
@@ -42,6 +44,18 @@ namespace StarterAssets
 		public void OnSprint(InputValue value)
 		{
 			SprintInput(value.isPressed);
+		}
+		public void OnChickenDance(InputValue value)
+		{
+			chickenDance = value.isPressed;
+		}
+		public void OnAim(InputValue value)
+		{
+			aiming = value.isPressed;
+		}
+		public void OnThrow(InputValue value)
+		{
+			throwing = value.isPressed;
 		}
 #endif
 

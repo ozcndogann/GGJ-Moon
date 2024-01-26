@@ -1,4 +1,5 @@
-﻿ using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 #if ENABLE_INPUT_SYSTEM 
 using UnityEngine.InputSystem;
 #endif
@@ -110,6 +111,8 @@ namespace StarterAssets
 
         private bool _hasAnimator;
 
+        [SerializeField] private GameObject line; 
+
         private bool IsCurrentDeviceMouse
         {
             get
@@ -150,17 +153,51 @@ namespace StarterAssets
             // reset our timeouts on start
             _jumpTimeoutDelta = JumpTimeout;
             _fallTimeoutDelta = FallTimeout;
+
+            line.SetActive(false);
         }
 
         private void Update()
         {
             _hasAnimator = TryGetComponent(out _animator);
-
             JumpAndGravity();
             GroundedCheck();
             Move();
+            ChickenDance();
+            Throw();
         }
 
+        private void ChickenDance()
+        {
+            if (_input.chickenDance && Grounded &&_input.move == new Vector2(0,0))
+            {
+                _animator.SetBool("Chicken", _input.chickenDance);
+            }
+            else
+            {
+                _animator.SetBool("Chicken", false);
+            }
+        }
+        private void Throw()
+        {
+            if (_input.aiming && Grounded && _input.move == new Vector2(0, 0))
+            {
+                line.SetActive(true);
+                _animator.SetBool("Aim", _input.aiming);
+                _animator.SetBool("Throw", _input.throwing);
+            }
+            else
+            {
+                _animator.SetBool("Aim", false);
+                _animator.SetBool("Throw", false);
+                _input.throwing = false;
+                line.SetActive(false);
+            }
+            if (_input.throwing)
+            {
+                line.SetActive(false);
+            }
+        }
         private void LateUpdate()
         {
             CameraRotation();
