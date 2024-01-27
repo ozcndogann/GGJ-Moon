@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
     public Rigidbody rb;
     public float speed;
     public TrailRenderer trail;
+    public GameObject particle;
    
     void Start()
     {
@@ -22,8 +23,9 @@ public class Bullet : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Shoot.EnemyCounter++;
-            Destroy(this.gameObject);
         }
+        Destroy(this.gameObject);
+        Instantiate(particle, collision.transform);
     }
     void Update()
     {

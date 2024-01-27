@@ -20,7 +20,7 @@ public class Shoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_input.throwing && Input.GetMouseButton(0))
+        if (_input.throwing && Input.GetMouseButton(0) && _input.aiming)
         {
             timer += Time.deltaTime;
             if (timer >= FireRate)
