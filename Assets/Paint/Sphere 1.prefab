@@ -239,3 +239,4 @@ MonoBehaviour:
   rb: {fileID: 3061990911226363816}
   speed: 50
   trail: {fileID: 8766409216572777214}
+  particle: {fileID: 199316, guid: 5469fb10a06f91d41983cc406b50ee4c, type: 3}
