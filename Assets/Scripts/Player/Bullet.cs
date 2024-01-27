@@ -13,7 +13,7 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         //rb.AddForce(transform.forward * speed);
-        
+        Destroy(particle, 1);
 
     }
     void Update()
@@ -35,6 +35,7 @@ public class Bullet : MonoBehaviour
                 // Apply force in that direction
                 rb.AddForce(direction * speed);
                 Destroy(this.gameObject, 2);
+                
             }
         }
     }
@@ -46,8 +47,9 @@ public class Bullet : MonoBehaviour
             Shoot.EnemyCounter++;
         }
         Destroy(this.gameObject);
+        var cloneParticle = Instantiate(particle, targetPosition, Quaternion.identity);
+        Destroy(cloneParticle, 1);
 
 
-        Instantiate(particle, targetPosition, Quaternion.identity);
     }
 }

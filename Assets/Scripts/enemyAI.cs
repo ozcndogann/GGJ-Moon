@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using StarterAssets;
+using UnityEngine.InputSystem;
 
 public class enemyAI : MonoBehaviour
 {
     public NavMeshAgent agent;
 
-    public Transform player;
+    public Transform playerTransform;
+    Animator Animator;
     Animator playerAnimator;
     Rigidbody rb;
     GameObject Artist, Chef, Baloon;
@@ -16,14 +19,14 @@ public class enemyAI : MonoBehaviour
     public LayerMask whatIsGround, whatIsPlayer;
 
     //public float health;
-
+    private PlayerInput _playerInput;
     //Patroling
     public Vector3 walkPoint;
     bool walkPointSet;
     public float walkPointRange;
     public float AngryTime;
     public float HittingTimer;
-
+    GameObject player;
     //Attacking
     public float timeBetweenAttacks;
     bool alreadyAttacked;
@@ -35,14 +38,17 @@ public class enemyAI : MonoBehaviour
 
     private void Awake()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         Artist = GameObject.FindGameObjectWithTag("Artist");
         Chef = GameObject.FindGameObjectWithTag("Chef");
         Baloon = GameObject.FindGameObjectWithTag("Baloon");
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        playerTransform = player.transform;
         agent = GetComponent<NavMeshAgent>();
         rb = gameObject.GetComponent<Rigidbody>();
-        playerAnimator = gameObject.GetComponent<Animator>();
-        playerAnimator.SetBool("isRunning", false);
+        Animator = gameObject.GetComponent<Animator>();
+        Animator.SetBool("isRunning", false);
+        playerAnimator = player.GetComponent<Animator>();
+        _playerInput = player.GetComponent<PlayerInput>();
     }
 
     private void Update()
@@ -67,48 +73,49 @@ public class enemyAI : MonoBehaviour
             Artist.GetComponent<Animator>().SetBool("isDead", true);
             Artist.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         }
-        if ((Mathf.Abs(rb.velocity.x) > 0 || Mathf.Abs(rb.velocity.z) > 0) && !playerAnimator.GetBool("isHitting") && !playerAnimator.GetBool("isAngry"))
+        if ((Mathf.Abs(rb.velocity.x) > 0 || Mathf.Abs(rb.velocity.z) > 0) && !Animator.GetBool("isHitting") && !Animator.GetBool("isAngry"))
         {
-            playerAnimator.SetBool("isRunning", true);
+            Animator.SetBool("isRunning", true);
         }
         else
         {
-            playerAnimator.SetBool("isRunning", false);
+            Animator.SetBool("isRunning", false);
         }
         //Check for sight and attack range
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
-        if (!playerAnimator.GetBool("isDead"))
+        if (!Animator.GetBool("isDead"))
         {
             if (!playerInSightRange /*&& !playerInAttackRange*/) Patroling();
-            else if (playerInSightRange /*&& !playerInAttackRange*/ && Vector3.Distance(player.transform.position, transform.position) >= 1.5f)
+            else if (playerInSightRange /*&& !playerInAttackRange*/ && Vector3.Distance(playerTransform.transform.position, transform.position) >= 1.5f)
             {
-                transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
-                playerAnimator.SetBool("isAngry", true);
+                transform.LookAt(new Vector3(playerTransform.transform.position.x, transform.position.y, playerTransform.transform.position.z));
+                Animator.SetBool("isAngry", true);
                 AngryTime += Time.deltaTime;
                 if (AngryTime >= 2.8f)
                 {
-                    playerAnimator.SetBool("isAngry", false);
+                    Animator.SetBool("isAngry", false);
                     ChasePlayer();
                 }
 
             }
 
-            else if (/*playerInAttackRange &&*/ playerInSightRange && Vector3.Distance(player.transform.position, transform.position) < 1.5f) AttackPlayer();
-            if (!playerInSightRange || Vector3.Distance(player.transform.position, transform.position) >= 1.5f)
+            else if (/*playerInAttackRange &&*/ playerInSightRange && Vector3.Distance(playerTransform.transform.position, transform.position) < 1.5f) AttackPlayer();
+            if (!playerInSightRange || Vector3.Distance(playerTransform.transform.position, transform.position) >= 1.5f)
             {
                 if (HittingTimer >= 0.85f)
                 {
-                    playerAnimator.SetBool("isHitting", false);
+                    Animator.SetBool("isHitting", false);
                 }
             }
-            if (playerAnimator.GetBool("isHitting"))
+            if (Animator.GetBool("isHitting"))
             {
                 HittingTimer += Time.deltaTime;
                 if (HittingTimer >= 0.85f)
                 {
-                    //Damage Kýsmý
+                    _playerInput.enabled = false;
+                    playerAnimator.SetBool("Die", true);
                 }
             }
             else
@@ -145,16 +152,16 @@ public class enemyAI : MonoBehaviour
 
     private void ChasePlayer()
     {
-        agent.SetDestination(player.position);
-        transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
+        agent.SetDestination(playerTransform.position);
+        transform.LookAt(new Vector3(playerTransform.transform.position.x, transform.position.y, playerTransform.transform.position.z));
     }
 
     private void AttackPlayer()
     {
         //Make sure enemy doesn't move
         agent.SetDestination(transform.position);
-        playerAnimator.SetBool("isHitting", true);
-        transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
+        Animator.SetBool("isHitting", true);
+        transform.LookAt(new Vector3(playerTransform.transform.position.x, transform.position.y, playerTransform.transform.position.z));
 
         if (!alreadyAttacked)
         {
