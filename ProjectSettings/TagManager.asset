@@ -10,6 +10,7 @@ TagManager:
   - Artist
   - Chef
   - Baloon
+  - Boss
   layers:
   - Default
   - TransparentFX

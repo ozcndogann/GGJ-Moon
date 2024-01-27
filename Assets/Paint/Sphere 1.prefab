@@ -95,7 +95,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6814158644723702634}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -240,3 +240,4 @@ MonoBehaviour:
   speed: 50
   trail: {fileID: 8766409216572777214}
   particle: {fileID: 199316, guid: 5469fb10a06f91d41983cc406b50ee4c, type: 3}
+  enemyH: {fileID: 0}

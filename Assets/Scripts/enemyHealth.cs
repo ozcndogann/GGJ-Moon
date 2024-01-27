@@ -21,10 +21,11 @@ public class enemyHealth : MonoBehaviour
         {
             canvas.SetActive(true);
         }
+        slider.value = Bullet.h;
     }
-    public void SetHealth(int health)
-    {
-        slider.value = health;
-    }
+    //public void SetHealth(int health)
+    //{
+    //    slider.value = health;
+    //}
 
 }

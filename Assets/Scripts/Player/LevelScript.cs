@@ -5,6 +5,8 @@ using UnityEngine;
 public class LevelScript : MonoBehaviour
 {
     public static bool Completed1, Completed2, Completed3, Completed4;
+    public static int BossCounter;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +29,7 @@ public class LevelScript : MonoBehaviour
         {
             Completed3 = true;
         }
-        if (Shoot.EnemyCounter == 20)
+        if (BossCounter == 10)
         {
             Completed4 = true;
         }

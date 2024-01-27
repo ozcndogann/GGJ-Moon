@@ -13,7 +13,7 @@ public class enemyAI : MonoBehaviour
     Animator Animator;
     Animator playerAnimator;
     Rigidbody rb;
-    GameObject Artist, Chef, Baloon;
+    GameObject Artist, Chef, Baloon, Boss;
     //public Rigidbody Playerrb;
 
     public LayerMask whatIsGround, whatIsPlayer;
@@ -42,6 +42,7 @@ public class enemyAI : MonoBehaviour
         Artist = GameObject.FindGameObjectWithTag("Artist");
         Chef = GameObject.FindGameObjectWithTag("Chef");
         Baloon = GameObject.FindGameObjectWithTag("Baloon");
+        Boss = GameObject.FindGameObjectWithTag("Boss");
         playerTransform = player.transform;
         agent = GetComponent<NavMeshAgent>();
         rb = gameObject.GetComponent<Rigidbody>();
@@ -70,8 +71,8 @@ public class enemyAI : MonoBehaviour
         }
         if (LevelScript.Completed4 == true)
         {
-            Artist.GetComponent<Animator>().SetBool("isDead", true);
-            Artist.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+            Boss.GetComponent<Animator>().SetBool("isDead", true);
+            Boss.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         }
         if ((Mathf.Abs(rb.velocity.x) > 0 || Mathf.Abs(rb.velocity.z) > 0) && !Animator.GetBool("isHitting") && !Animator.GetBool("isAngry"))
         {
