@@ -13,7 +13,7 @@ public class enemyAI : MonoBehaviour
     Animator Animator;
     Animator playerAnimator;
     Rigidbody rb;
-    GameObject Artist, Chef, Baloon;
+    GameObject Artist, Chef, Baloon, Boss;
     //public Rigidbody Playerrb;
 
     public LayerMask whatIsGround, whatIsPlayer;
@@ -42,6 +42,7 @@ public class enemyAI : MonoBehaviour
         Artist = GameObject.FindGameObjectWithTag("Artist");
         Chef = GameObject.FindGameObjectWithTag("Chef");
         Baloon = GameObject.FindGameObjectWithTag("Baloon");
+        Boss = GameObject.FindGameObjectWithTag("Boss");
         playerTransform = player.transform;
         agent = GetComponent<NavMeshAgent>();
         rb = gameObject.GetComponent<Rigidbody>();
@@ -61,17 +62,17 @@ public class enemyAI : MonoBehaviour
         if (LevelScript.Completed2 == true)
         {
             Chef.GetComponent<Animator>().SetBool("isDead", true);
-            Artist.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+            Chef.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         }
         if (LevelScript.Completed3 == true)
         {
             Baloon.GetComponent<Animator>().SetBool("isDead", true);
-            Artist.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+            Baloon.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         }
         if (LevelScript.Completed4 == true)
         {
-            Artist.GetComponent<Animator>().SetBool("isDead", true);
-            Artist.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+            Boss.GetComponent<Animator>().SetBool("isDead", true);
+            Boss.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         }
         if ((Mathf.Abs(rb.velocity.x) > 0 || Mathf.Abs(rb.velocity.z) > 0) && !Animator.GetBool("isHitting") && !Animator.GetBool("isAngry"))
         {
@@ -85,7 +86,7 @@ public class enemyAI : MonoBehaviour
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
-        if (!Animator.GetBool("isDead"))
+        if (!Animator.GetBool("isDead") && !Animator.GetBool("isVictory"))
         {
             if (!playerInSightRange /*&& !playerInAttackRange*/) Patroling();
             else if (playerInSightRange /*&& !playerInAttackRange*/ && Vector3.Distance(playerTransform.transform.position, transform.position) >= 1.5f)
@@ -116,6 +117,8 @@ public class enemyAI : MonoBehaviour
                 {
                     _playerInput.enabled = false;
                     playerAnimator.SetBool("Die", true);
+                    Animator.SetBool("isVictory", true);
+                    gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
                 }
             }
             else

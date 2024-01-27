@@ -10,6 +10,8 @@ public class Bullet : MonoBehaviour
     public TrailRenderer trail;
     public GameObject particle;
     Vector3 targetPosition;
+    public enemyHealth enemyH;
+    public static int h = 10;
     void Start()
     {
         //rb.AddForce(transform.forward * speed);
@@ -39,12 +41,18 @@ public class Bullet : MonoBehaviour
             }
         }
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "EnemyTag")
         {
             Destroy(collision.gameObject);
             Shoot.EnemyCounter++;
+        }
+        if (collision.gameObject.tag == "Boss")
+        {
+            LevelScript.BossCounter++;
+            h--;
+            Debug.Log("Hit");
         }
         Destroy(this.gameObject);
         var cloneParticle = Instantiate(particle, targetPosition, Quaternion.identity);
