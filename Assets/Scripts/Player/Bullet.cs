@@ -6,16 +6,17 @@ public class Bullet : MonoBehaviour
 {
     public Rigidbody rb;
     public float speed;
+    public TrailRenderer trail;
     void Start()
     {
         rb.AddForce(transform.forward * speed);
         Destroy(this.gameObject, 2);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        Destroy(this.gameObject, 1);
-
+        Debug.Log("enter");
+        Destroy(this.gameObject, 0.05f);
     }
     void Update()
     {
