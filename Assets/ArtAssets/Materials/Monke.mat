@@ -7,14 +7,12 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New Material 1
+  m_Name: Monke
   m_Shader: {fileID: 4800000, guid: a2a06e22c08354d9699356710b69ca9c, type: 3}
   m_ValidKeywords:
-  - DIFFUSE
   - DIFFUSE_PER_PIXEL
   - FOG
   - MATCAP_PERSPECTIVE
-  - SHADOWS_ENABLED
   - _DETAILBLEND_MULTIPLY
   - _DETAILUV_UV1
   - _HEIGHTCOLORSBLEND_ALPHA_BLEND
@@ -33,7 +31,8 @@ Material:
   - _RIMBLEND_ADDITIVE
   - _SHADOWOVERLAYANIMATION_SCROLL
   - _SPECULARUV_UV1
-  m_InvalidKeywords: []
+  m_InvalidKeywords:
+  - _IGNOREMAINTEXALPHA_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -44,8 +43,8 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: dee371469c5385f44b3597397a7d0e50, type: 3}
-        m_Scale: {x: 12.7, y: 39.2}
+        m_Texture: {fileID: 2800000, guid: cd99d5c4ee0186f48a0b8053dca90263, type: 3}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
@@ -96,8 +95,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: dee371469c5385f44b3597397a7d0e50, type: 3}
-        m_Scale: {x: 12.7, y: 39.2}
+        m_Texture: {fileID: 2800000, guid: cd99d5c4ee0186f48a0b8053dca90263, type: 3}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MatCapTex:
         m_Texture: {fileID: 0}
@@ -184,11 +183,11 @@ Material:
     - _DetailNormalMapScale: 1
     - _DetailUV: 0
     - _DetailVertexColors: 0
-    - _Diffuse: 1
-    - _DiffuseBrightness: 2
+    - _Diffuse: 0
+    - _DiffuseBrightness: 1.2
     - _DiffuseContrast: 1
     - _DiffusePerPixel: 1
-    - _DiffuseWrap: 0.69
+    - _DiffuseWrap: 0.51
     - _DstBlend: 0
     - _EnvironmentReflections: 1
     - _Flat: 0
@@ -203,7 +202,7 @@ Material:
     - _HeightColorsHeight: 0
     - _HeightColorsSpace: 0
     - _HeightColorsThickness: 0
-    - _IgnoreMainTexAlpha: 0
+    - _IgnoreMainTexAlpha: 1
     - _Layer1Alpha: 1
     - _Layer1Blend: 0
     - _Layer1Brightness: 1
@@ -223,7 +222,7 @@ Material:
     - _MatCapContrast: 1
     - _MatCapPerspective: 1
     - _MatCapStatic: 0
-    - _Metallic: 0.075
+    - _Metallic: 0.15
     - _MixedLighting: 0
     - _NormalStrength: 1
     - _NormalUV: 0
@@ -242,7 +241,7 @@ Material:
     - _PlantSwayAmount: 0.15
     - _PlantSwaySpeed: 1
     - _PlantType: 0
-    - _Preset: 0
+    - _Preset: 1
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Reflection: 0
@@ -260,8 +259,8 @@ Material:
     - _ShadowOverlaySpeedU: 0.1
     - _ShadowOverlaySpeedV: 0.03
     - _ShadowOverlaySwayAmount: 0.01
-    - _ShadowsEnabled: 1
-    - _Smoothness: 0.182
+    - _ShadowsEnabled: 0
+    - _Smoothness: 0.599
     - _SmoothnessTextureChannel: 0
     - _SourceBlend: 5
     - _Specular: 0
@@ -285,8 +284,8 @@ Material:
     - _AnimeColor1: {r: 1, g: 1, b: 1, a: 1}
     - _AnimeColor2: {r: 1.35, g: 1.35, b: 1.35, a: 1}
     - _AnimeColor3: {r: 2, g: 2, b: 2, a: 1}
-    - _BaseColor: {r: 0.596084, g: 0.82302624, b: 0.9811321, a: 1}
-    - _Color: {r: 0.59608394, g: 0.82302624, b: 0.9811321, a: 1}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DetailColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Emissive: {r: 0, g: 0, b: 0, a: 0}
@@ -301,7 +300,7 @@ Material:
     - _ReflectionColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimDirection: {r: 0, g: 0, b: 0, a: 0}
-    - _ShadowColor: {r: 0.32669988, g: 0.3555487, b: 0.3962264, a: 1}
+    - _ShadowColor: {r: 0.3, g: 0.3, b: 0.3, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

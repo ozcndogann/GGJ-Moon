@@ -13,7 +13,9 @@ Material:
   - DIFFUSE
   - FOG
   - MATCAP_PERSPECTIVE
+  - RIM
   - SHADOWS_ENABLED
+  - SPECULAR
   - _DETAILBLEND_MULTIPLY
   - _DETAILUV_UV1
   - _HEIGHTCOLORSBLEND_ALPHA_BLEND
@@ -248,7 +250,7 @@ Material:
     - _ReflectionAmount: 1
     - _ReflectionRim: 0
     - _ReflectionSpecular: 0
-    - _Rim: 0
+    - _Rim: 1
     - _RimAmount: 1
     - _RimBlend: 1
     - _RimContrast: 5
@@ -263,7 +265,7 @@ Material:
     - _Smoothness: 0.599
     - _SmoothnessTextureChannel: 0
     - _SourceBlend: 5
-    - _Specular: 0
+    - _Specular: 1
     - _SpecularBrightness: 1
     - _SpecularHair: 0
     - _SpecularHighlights: 1
@@ -298,7 +300,7 @@ Material:
     - _MatCapRot: {r: 0, g: 0, b: 0, a: 0}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _RimColor: {r: 1, g: 1, b: 1, a: 1}
+    - _RimColor: {r: 0.15471691, g: 0.38791794, b: 1, a: 1}
     - _RimDirection: {r: 0, g: 0, b: 0, a: 0}
     - _ShadowColor: {r: 0.3, g: 0.3, b: 0.3, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
