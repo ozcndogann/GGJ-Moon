@@ -9,23 +9,12 @@ public class Bullet : MonoBehaviour
     public float speed;
     public TrailRenderer trail;
     public GameObject particle;
-   
+    Vector3 targetPosition;
     void Start()
     {
         //rb.AddForce(transform.forward * speed);
         
 
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "EnemyTag")
-        {
-            Destroy(collision.gameObject);
-            Shoot.EnemyCounter++;
-        }
-        Destroy(this.gameObject);
-        Instantiate(particle, collision.transform);
     }
     void Update()
     {
@@ -40,7 +29,7 @@ public class Bullet : MonoBehaviour
             if (ThirdPersonController.canShoot)
             {
 
-                Vector3 targetPosition = hit.point;
+                targetPosition = hit.point;
 
                 Vector3 direction = (targetPosition - transform.position).normalized;
                 // Apply force in that direction
@@ -48,5 +37,17 @@ public class Bullet : MonoBehaviour
                 Destroy(this.gameObject, 2);
             }
         }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "EnemyTag")
+        {
+            Destroy(collision.gameObject);
+            Shoot.EnemyCounter++;
+        }
+        Destroy(this.gameObject);
+
+
+        Instantiate(particle, targetPosition, Quaternion.identity);
     }
 }
