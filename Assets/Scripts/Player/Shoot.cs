@@ -19,8 +19,7 @@ public class Shoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(_input.throwing);
-        if (_input.throwing && Input.GetMouseButton(0) && ThirdPersonController.canShoot)
+        if (_input.throwing && Input.GetMouseButton(0))
         {
             timer += Time.deltaTime;
             if (timer >= FireRate)
