@@ -158,7 +158,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.5
+  m_Time: 1
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -237,6 +237,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 3061990911226363816}
-  speed: 1500
+  speed: 50
   trail: {fileID: 8766409216572777214}
-  paintTrace: {fileID: 8229290347421052875, guid: bd05746a5e39a1e49981d0fb02cd315c, type: 3}

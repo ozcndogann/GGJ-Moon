@@ -154,7 +154,7 @@ namespace StarterAssets
             _jumpTimeoutDelta = JumpTimeout;
             _fallTimeoutDelta = FallTimeout;
 
-            line.SetActive(false);
+            //line.SetActive(false);
         }
 
         private void Update()
@@ -197,6 +197,7 @@ namespace StarterAssets
             }
             if (_input.throwing)
             {
+                //canShoot = false;
                 line.SetActive(false);
             }
         }
@@ -204,7 +205,6 @@ namespace StarterAssets
         {
             CameraRotation();
         }
-
         private void AssignAnimationIDs()
         {
             _animIDSpeed = Animator.StringToHash("Speed");
