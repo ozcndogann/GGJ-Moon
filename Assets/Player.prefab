@@ -1337,6 +1337,7 @@ GameObject:
   - component: {fileID: 5199358364545911948}
   - component: {fileID: 1552660615665454151}
   - component: {fileID: 1552660615665454150}
+  - component: {fileID: 8728740684258062265}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -1615,6 +1616,18 @@ MonoBehaviour:
   bullet: {fileID: 6814158644723702634, guid: 03eeeba63229e754fa2f3fecb0dc0abc, type: 3}
   spawnpos: {fileID: 8461074287232148897}
   FireRate: 90
+--- !u!114 &8728740684258062265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5199358364545911936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5412867f239236c4091f7e61c13ecb6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5245714605406233755
 GameObject:
   m_ObjectHideFlags: 0

@@ -29,7 +29,7 @@ public class RotatePlayer : MonoBehaviour
                 Vector3 targetPosition = pos.point;
                 transform.LookAt(pos.point);
                 transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
-                line.SetPosition(0, new Vector3((transform.position.x), .7f, transform.position.z)); // Start at the GameObject's position
+                line.SetPosition(0, new Vector3((transform.position.x), transform.position.y + 0.7f, transform.position.z)); // Start at the GameObject's position
                 line.SetPosition(1, targetPosition); // End at the mouse position in the world
             }
         }
