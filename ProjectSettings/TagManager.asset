@@ -8,6 +8,8 @@ TagManager:
   - Line
   - EnemyTag
   - Artist
+  - Chef
+  - Baloon
   layers:
   - Default
   - TransparentFX

@@ -49,19 +49,23 @@ public class enemyAI : MonoBehaviour
     {
         if (LevelScript.Completed1 == true)
         {
-            Artist.GetComponent<Animator>().SetBool("isDeath",true);
+            Artist.GetComponent<Animator>().SetBool("isDead",true);
+            Artist.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         }
         if (LevelScript.Completed2 == true)
         {
-            Artist.GetComponent<Animator>().SetBool("isDeath", true);
+            Chef.GetComponent<Animator>().SetBool("isDead", true);
+            Artist.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         }
         if (LevelScript.Completed3 == true)
         {
-            Artist.GetComponent<Animator>().SetBool("isDeath", true);
+            Baloon.GetComponent<Animator>().SetBool("isDead", true);
+            Artist.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         }
         if (LevelScript.Completed4 == true)
         {
-            Artist.GetComponent<Animator>().SetBool("isDeath", true);
+            Artist.GetComponent<Animator>().SetBool("isDead", true);
+            Artist.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         }
         if ((Mathf.Abs(rb.velocity.x) > 0 || Mathf.Abs(rb.velocity.z) > 0) && !playerAnimator.GetBool("isHitting") && !playerAnimator.GetBool("isAngry"))
         {
@@ -75,40 +79,42 @@ public class enemyAI : MonoBehaviour
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
+        if (!playerAnimator.GetBool("isDead"))
+        {
+            if (!playerInSightRange /*&& !playerInAttackRange*/) Patroling();
+            else if (playerInSightRange /*&& !playerInAttackRange*/ && Vector3.Distance(player.transform.position, transform.position) >= 1.5f)
+            {
+                transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
+                playerAnimator.SetBool("isAngry", true);
+                AngryTime += Time.deltaTime;
+                if (AngryTime >= 2.8f)
+                {
+                    playerAnimator.SetBool("isAngry", false);
+                    ChasePlayer();
+                }
 
-        if (!playerInSightRange /*&& !playerInAttackRange*/) Patroling();
-        else if (playerInSightRange /*&& !playerInAttackRange*/ && Vector3.Distance(player.transform.position, transform.position) >= 1.5f ) 
-        {
-            transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
-            playerAnimator.SetBool("isAngry", true);
-            AngryTime += Time.deltaTime;
-            if (AngryTime >= 2.8f)
-            {
-                playerAnimator.SetBool("isAngry", false);
-                ChasePlayer();
             }
-            
-        }
-        
-        else if (/*playerInAttackRange &&*/ playerInSightRange && Vector3.Distance(player.transform.position, transform.position) < 1.5f) AttackPlayer();
-        if(!playerInSightRange || Vector3.Distance(player.transform.position, transform.position) >= 1.5f) 
-        {
-            if (HittingTimer >= 0.85f)
+
+            else if (/*playerInAttackRange &&*/ playerInSightRange && Vector3.Distance(player.transform.position, transform.position) < 1.5f) AttackPlayer();
+            if (!playerInSightRange || Vector3.Distance(player.transform.position, transform.position) >= 1.5f)
             {
-                playerAnimator.SetBool("isHitting", false);
-            } 
-        }
-        if (playerAnimator.GetBool("isHitting"))
-        {
-            HittingTimer += Time.deltaTime;
-            if(HittingTimer>=0.85f)
-            {
-                //Damage Kýsmý
+                if (HittingTimer >= 0.85f)
+                {
+                    playerAnimator.SetBool("isHitting", false);
+                }
             }
-        }
-        else
-        {
-            HittingTimer = 0;
+            if (playerAnimator.GetBool("isHitting"))
+            {
+                HittingTimer += Time.deltaTime;
+                if (HittingTimer >= 0.85f)
+                {
+                    //Damage Kýsmý
+                }
+            }
+            else
+            {
+                HittingTimer = 0;
+            }
         }
     }
 
