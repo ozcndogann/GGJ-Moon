@@ -7,7 +7,6 @@ public class BarrierControl : MonoBehaviour
     public Transform player;
     private bool Act = false;
     Animator animator;
-    public bool Completed1;
 
     private void Start()
     {
@@ -23,7 +22,7 @@ public class BarrierControl : MonoBehaviour
         }
 
 
-        if (Completed1)
+        if (LevelScript.Completed1)
         {
             animator.SetBool("isClosing", true);
         }

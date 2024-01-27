@@ -55,10 +55,9 @@ public class enemyAI : MonoBehaviour
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
-        Debug.Log(Vector3.Distance(player.transform.position, transform.position));
 
         if (!playerInSightRange /*&& !playerInAttackRange*/) Patroling();
-        if (playerInSightRange /*&& !playerInAttackRange*/ && Vector3.Distance(player.transform.position, transform.position) >= 1.5f ) 
+        else if (playerInSightRange /*&& !playerInAttackRange*/ && Vector3.Distance(player.transform.position, transform.position) >= 1.5f ) 
         {
             transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
             playerAnimator.SetBool("isAngry", true);
@@ -71,8 +70,14 @@ public class enemyAI : MonoBehaviour
             
         }
         
-        if (/*playerInAttackRange &&*/ playerInSightRange && Vector3.Distance(player.transform.position, transform.position) < 1.5f) AttackPlayer();
-        else { playerAnimator.SetBool("isHitting", false); }
+        else if (/*playerInAttackRange &&*/ playerInSightRange && Vector3.Distance(player.transform.position, transform.position) < 1.5f) AttackPlayer();
+        if(!playerInSightRange || Vector3.Distance(player.transform.position, transform.position) >= 1.5f) 
+        {
+            if (HittingTimer >= 0.85f)
+            {
+                playerAnimator.SetBool("isHitting", false);
+            } 
+        }
         if (playerAnimator.GetBool("isHitting"))
         {
             HittingTimer += Time.deltaTime;

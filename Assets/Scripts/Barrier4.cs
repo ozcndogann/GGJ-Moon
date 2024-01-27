@@ -23,7 +23,7 @@ public class Barrier4 : MonoBehaviour
         }
 
 
-        if (Completed4)
+        if (LevelScript.Completed4)
         {
             animator.SetBool("isClosing", true);
         }

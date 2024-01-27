@@ -569,7 +569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 368cc7d91d9b338409ab7e656f59dea6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.57
+      value: -7.09
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 368cc7d91d9b338409ab7e656f59dea6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -577,7 +577,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 368cc7d91d9b338409ab7e656f59dea6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 22.72
+      value: 11.99
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 368cc7d91d9b338409ab7e656f59dea6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -719,6 +719,7 @@ MonoBehaviour:
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 3
   AngryTime: 0
+  HittingTimer: 0
   timeBetweenAttacks: 0.5
   sightRange: 20
   attackRange: 1

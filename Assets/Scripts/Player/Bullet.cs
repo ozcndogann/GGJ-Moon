@@ -18,7 +18,12 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Destroy(this.gameObject, .1f);
+        if (collision.gameObject.tag == "EnemyTag")
+        {
+            Destroy(collision.gameObject);
+            Shoot.EnemyCounter++;
+            Destroy(this.gameObject);
+        }
     }
     void Update()
     {
