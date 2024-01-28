@@ -41,7 +41,7 @@ public class enemyAI : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         Artist = GameObject.FindGameObjectWithTag("Artist");
         Chef = GameObject.FindGameObjectWithTag("Chef");
-        Baloon = GameObject.FindGameObjectWithTag("Baloon");
+        Balooner = GameObject.FindGameObjectWithTag("Balooner");
         Boss = GameObject.FindGameObjectWithTag("Boss");
         playerTransform = player.transform;
         agent = GetComponent<NavMeshAgent>();
@@ -66,8 +66,8 @@ public class enemyAI : MonoBehaviour
         }
         if (LevelScript.Completed3 == true)
         {
-            Baloon.GetComponent<Animator>().SetBool("isDead", true);
-            Baloon.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+            Balooner.GetComponent<Animator>().SetBool("isDead", true);
+            Balooner.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         }
         if (LevelScript.Completed4 == true)
         {
