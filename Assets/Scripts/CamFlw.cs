@@ -7,11 +7,13 @@ public class CamFlw : MonoBehaviour
     [SerializeField] private float smoothTime;
     private Vector3 _currentVelocity = Vector3.zero;
     GameObject player;
+    GameObject artist;
 
     private void Awake()
     {
         _offset = transform.position - target.position;
         player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Artist");
     }
 
     private void LateUpdate()
@@ -24,7 +26,15 @@ public class CamFlw : MonoBehaviour
         {
             gameObject.GetComponent<Camera>().fieldOfView = 60;
         }
-        Vector3 targetPosition = target.position + _offset;
-        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref _currentVelocity, smoothTime);
+        if (DialogControl.playersTurn)
+        {
+            Vector3 targetPosition = player.transform.position + _offset;
+            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref _currentVelocity, smoothTime);
+        }
+        else if (DialogControl.enemysTurn)
+        {
+            Vector3 targetPosition = artist.transform.position + _offset;
+            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref _currentVelocity, smoothTime);
+        }
     }
 }

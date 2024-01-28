@@ -32,7 +32,8 @@ public class RotatePlayer : MonoBehaviour
                 line.SetPosition(0, new Vector3((transform.position.x), transform.position.y + 0.7f, transform.position.z)); // Start at the GameObject's position
                 line.SetPosition(1, targetPosition); // End at the mouse position in the world
             }
+
         }
-        
+
     }
 }
