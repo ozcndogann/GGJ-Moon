@@ -13,7 +13,7 @@ public class enemyAI : MonoBehaviour
     Animator Animator;
     Animator playerAnimator;
     Rigidbody rb;
-    GameObject Artist, Chef, Baloon, Boss;
+    GameObject Artist, Chef, Balooner, Boss;
     //public Rigidbody Playerrb;
 
     public LayerMask whatIsGround, whatIsPlayer;

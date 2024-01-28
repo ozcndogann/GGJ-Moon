@@ -13,6 +13,7 @@ TagManager:
   - Boss
   - Tuval
   - Oven
+  - Balooner
   layers:
   - Default
   - TransparentFX
