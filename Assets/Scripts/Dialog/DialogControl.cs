@@ -34,13 +34,13 @@ public class DialogControl : MonoBehaviour
         //{
         //    dialogUI.SetActive(false);
         //}
-        if (dialogState % 2 == 0/* && Cinematic.isCineOn*/)
+        if (dialogState % 2 == 0 && Cinematic.isCineOn)
         {
             _playerInput.enabled = false;
             playersTurn = true;
             enemysTurn = false;
         }
-        else if(dialogState % 2 == 1/* && Cinematic.isCineOn*/)
+        else if(dialogState % 2 == 1 && Cinematic.isCineOn)
         {
             _playerInput.enabled = false;
             enemysTurn = true;
