@@ -175,7 +175,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicSounds: []
-  sfxSounds: []
+  sfxSounds:
+  - Name: Throw
+    clip: {fileID: 8300000, guid: bddef1ba371610945b0ddd1631d477cd, type: 3}
   musicSource: {fileID: 1497822948374074267}
   sfxSource: {fileID: 1497822949568541858}
 --- !u!1 &1497822949568541857

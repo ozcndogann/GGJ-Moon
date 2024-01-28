@@ -28,6 +28,7 @@ public class Shoot : MonoBehaviour
                 timer = 0;
                 GameObject go = Instantiate(bullet, spawnpos.transform.position, spawnpos.transform.rotation);
                 go.SetActive(true);
+                AudioManager.Instance.PlaySfx("Throw");
             }
         }
         if (!_input.aiming)
