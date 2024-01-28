@@ -74,7 +74,7 @@ public class enemyAI : MonoBehaviour
             Boss.GetComponent<Animator>().SetBool("isDead", true);
             Boss.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         }
-        if ((Mathf.Abs(rb.velocity.x) > 0 || Mathf.Abs(rb.velocity.z) > 0) && !Animator.GetBool("isHitting") && !Animator.GetBool("isAngry"))
+        if ((Mathf.Abs(rb.velocity.x) > 0.1f || Mathf.Abs(rb.velocity.z) > 0.1f) && !Animator.GetBool("isHitting") && !Animator.GetBool("isAngry"))
         {
             Animator.SetBool("isRunning", true);
         }
@@ -92,6 +92,7 @@ public class enemyAI : MonoBehaviour
             else if (playerInSightRange /*&& !playerInAttackRange*/ && Vector3.Distance(playerTransform.transform.position, transform.position) >= 1.5f)
             {
                 transform.LookAt(new Vector3(playerTransform.transform.position.x, transform.position.y, playerTransform.transform.position.z));
+                Animator.SetBool("isStarted", true);
                 Animator.SetBool("isAngry", true);
                 AngryTime += Time.deltaTime;
                 if (AngryTime >= 2.8f)
@@ -105,7 +106,7 @@ public class enemyAI : MonoBehaviour
             else if (/*playerInAttackRange &&*/ playerInSightRange && Vector3.Distance(playerTransform.transform.position, transform.position) < 1.5f) AttackPlayer();
             if (!playerInSightRange || Vector3.Distance(playerTransform.transform.position, transform.position) >= 1.5f)
             {
-                if (HittingTimer >= 0.85f)
+                if (HittingTimer >= 1.5f)
                 {
                     Animator.SetBool("isHitting", false);
                 }
@@ -113,7 +114,7 @@ public class enemyAI : MonoBehaviour
             if (Animator.GetBool("isHitting"))
             {
                 HittingTimer += Time.deltaTime;
-                if (HittingTimer >= 0.85f)
+                if (HittingTimer >= 1.5f)
                 {
                     _playerInput.enabled = false;
                     playerAnimator.SetBool("Die", true);

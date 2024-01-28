@@ -38,11 +38,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|Armature.001|mixamo.com|Layer0
-      takeName: Armature|Armature.001|mixamo.com|Layer0
+      name: Armature|Cheer
+      takeName: Armature|Cheer
       internalID: -6842666708266138392
       firstFrame: 0
-      lastFrame: 115
+      lastFrame: 197
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -96,11 +96,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Punching
-      takeName: Armature|Punching
+      name: Armature|Attack
+      takeName: Armature|Attack
       internalID: 7479124295688077090
       firstFrame: 0
-      lastFrame: 30
+      lastFrame: 115
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -165,7 +165,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

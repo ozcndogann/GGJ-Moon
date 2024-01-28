@@ -17040,7 +17040,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4858262831080363578, guid: 17f3005cc2c5fe84aa9f9c527f9ec97a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -3.71
       objectReference: {fileID: 0}
     - target: {fileID: 4858262831080363578, guid: 17f3005cc2c5fe84aa9f9c527f9ec97a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -17048,7 +17048,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4858262831080363578, guid: 17f3005cc2c5fe84aa9f9c527f9ec97a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 5.58
       objectReference: {fileID: 0}
     - target: {fileID: 4858262831080363578, guid: 17f3005cc2c5fe84aa9f9c527f9ec97a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -19319,7 +19319,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2377037123704429860, guid: a958b02aab4aaad44b58da042d71847d, type: 3}
       propertyPath: m_Name
-      value: Artist (1)
+      value: Painter
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377037123704429860, guid: a958b02aab4aaad44b58da042d71847d, type: 3}
+      propertyPath: m_TagString
+      value: Artist
       objectReference: {fileID: 0}
     - target: {fileID: 3150054664605648798, guid: a958b02aab4aaad44b58da042d71847d, type: 3}
       propertyPath: m_RootOrder
