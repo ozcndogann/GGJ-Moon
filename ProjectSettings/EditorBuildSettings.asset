@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 2ee2c46babec5c24e961fc7ddc2d6e31
   - enabled: 1
+    path: Assets/Scenes/CanGezer.unity
+    guid: c0639caf95c1e454eb27b0d61551571b
+  - enabled: 1
     path: Assets/StarterAssets/ThirdPersonController/Scenes/Playground.unity
     guid: e9017d5f96b9f09489b4b37e1d6eb914
   m_configObjects: {}
