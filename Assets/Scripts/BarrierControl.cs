@@ -18,6 +18,7 @@ public class BarrierControl : MonoBehaviour
         if(player.position.z >= 33 && !Act)
         {
             animator.SetBool("isOpening", true);
+            AudioManager.Instance.PlaySfx("WallOpen");
             Act = true;
         }
 
@@ -25,6 +26,7 @@ public class BarrierControl : MonoBehaviour
         if (LevelScript.Completed1)
         {
             animator.SetBool("isClosing", true);
+            AudioManager.Instance.PlaySfx("WallOpen");
         }
     }
 }

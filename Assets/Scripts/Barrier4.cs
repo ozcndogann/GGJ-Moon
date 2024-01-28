@@ -19,6 +19,7 @@ public class Barrier4 : MonoBehaviour
         if (player.position.z >= 280 && !Act)
         {
             animator.SetBool("isOpening", true);
+            AudioManager.Instance.PlaySfx("WallOpen");
             Act = true;
         }
 
@@ -26,6 +27,7 @@ public class Barrier4 : MonoBehaviour
         if (LevelScript.Completed4)
         {
             animator.SetBool("isClosing", true);
+            AudioManager.Instance.PlaySfx("WallOpen");
         }
     }
 }

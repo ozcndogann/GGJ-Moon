@@ -57,7 +57,22 @@ public class Bullet : MonoBehaviour
         Destroy(this.gameObject);
         var cloneParticle = Instantiate(particle, targetPosition, Quaternion.identity);
         Destroy(cloneParticle, 1);
-
-
+        AudioManager.Instance.PlaySfx("Test");
+        if (collision.CompareTag("Tuval"))
+        {
+            AudioManager.Instance.PlaySfx("Hit");
+        }
+        else if (collision.CompareTag("Oven"))
+        {
+            AudioManager.Instance.PlaySfx("OvenBoom");
+        }
+        else if (collision.CompareTag("Baloon"))
+        {
+            AudioManager.Instance.PlaySfx("BaloonBoom");
+        }
+        else
+        {
+            AudioManager.Instance.PlaySfx("GroundHit");
+        }
     }
 }

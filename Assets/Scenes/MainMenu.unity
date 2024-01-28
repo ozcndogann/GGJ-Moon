@@ -1563,12 +1563,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1497822949403692044, guid: 5f788bfd369b342469358eb55375e8a9, type: 3}
       propertyPath: sfxSounds.Array.size
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1497822949403692044, guid: 5f788bfd369b342469358eb55375e8a9, type: 3}
       propertyPath: musicSounds.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1497822949403692044, guid: 5f788bfd369b342469358eb55375e8a9, type: 3}
+      propertyPath: sfxSounds.Array.data[0].Name
+      value: Hit
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497822949403692044, guid: 5f788bfd369b342469358eb55375e8a9, type: 3}
+      propertyPath: sfxSounds.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 44eda7a87e96e2049b8b28c29c810597, type: 3}
+    - target: {fileID: 1497822949403692044, guid: 5f788bfd369b342469358eb55375e8a9, type: 3}
+      propertyPath: sfxSounds.Array.data[1].Name
+      value: OvenBoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497822949403692044, guid: 5f788bfd369b342469358eb55375e8a9, type: 3}
+      propertyPath: sfxSounds.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 88985bace8668b64b92b24fc8cc26c09, type: 3}
+    - target: {fileID: 1497822949403692044, guid: 5f788bfd369b342469358eb55375e8a9, type: 3}
+      propertyPath: sfxSounds.Array.data[2].Name
+      value: BaloonBoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497822949403692044, guid: 5f788bfd369b342469358eb55375e8a9, type: 3}
+      propertyPath: sfxSounds.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: b9ee03fc889566245a5e665ec5c6d44f, type: 3}
+    - target: {fileID: 1497822949403692044, guid: 5f788bfd369b342469358eb55375e8a9, type: 3}
+      propertyPath: sfxSounds.Array.data[3].Name
+      value: GroundHit
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497822949403692044, guid: 5f788bfd369b342469358eb55375e8a9, type: 3}
+      propertyPath: sfxSounds.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3547d3a83e5f4fd458c2278b03272444, type: 3}
+    - target: {fileID: 1497822949403692044, guid: 5f788bfd369b342469358eb55375e8a9, type: 3}
+      propertyPath: sfxSounds.Array.data[4].Name
+      value: WallOpen
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497822949403692044, guid: 5f788bfd369b342469358eb55375e8a9, type: 3}
+      propertyPath: sfxSounds.Array.data[4].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: ad8a4f611ba54954983fae4727a9c375, type: 3}
+    - target: {fileID: 1497822949403692044, guid: 5f788bfd369b342469358eb55375e8a9, type: 3}
+      propertyPath: sfxSounds.Array.data[5].Name
+      value: Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497822949403692044, guid: 5f788bfd369b342469358eb55375e8a9, type: 3}
+      propertyPath: sfxSounds.Array.data[5].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 88985bace8668b64b92b24fc8cc26c09, type: 3}
     - target: {fileID: 1497822949403692045, guid: 5f788bfd369b342469358eb55375e8a9, type: 3}
       propertyPath: m_RootOrder
       value: 4
