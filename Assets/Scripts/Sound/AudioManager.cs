@@ -23,7 +23,7 @@ public class AudioManager : MonoBehaviour
     }
     private void Start()
     {
-        PlayMusic("ThemeMusic");
+        PlayMusic("Theme");
         
     }
     private void Update()

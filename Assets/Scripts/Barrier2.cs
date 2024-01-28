@@ -13,6 +13,14 @@ public class Barrier2 : MonoBehaviour
     {
         animator = GetComponent<Animator>();
     }
+
+    IEnumerator WFS()
+    {
+        yield return new WaitForSeconds(3f);
+        animator.SetBool("isClosing", true);
+        AudioManager.Instance.PlaySfx("WallOpen");
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -26,8 +34,7 @@ public class Barrier2 : MonoBehaviour
 
         if (LevelScript.Completed2)
         {
-            AudioManager.Instance.PlaySfx("WallOpen");
-            animator.SetBool("isClosing", true);
+            StartCoroutine(WFS());
         }
     }
 }

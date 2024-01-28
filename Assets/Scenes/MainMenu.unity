@@ -1559,15 +1559,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1497822948374074267, guid: 5f788bfd369b342469358eb55375e8a9, type: 3}
       propertyPath: m_Volume
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1497822949403692044, guid: 5f788bfd369b342469358eb55375e8a9, type: 3}
       propertyPath: sfxSounds.Array.size
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1497822949403692044, guid: 5f788bfd369b342469358eb55375e8a9, type: 3}
       propertyPath: musicSounds.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1497822949403692044, guid: 5f788bfd369b342469358eb55375e8a9, type: 3}
       propertyPath: sfxSounds.Array.data[0].Name
@@ -1600,7 +1600,7 @@ PrefabInstance:
     - target: {fileID: 1497822949403692044, guid: 5f788bfd369b342469358eb55375e8a9, type: 3}
       propertyPath: sfxSounds.Array.data[3].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 3547d3a83e5f4fd458c2278b03272444, type: 3}
+      objectReference: {fileID: 8300000, guid: 64b4821b8659f714393b14b56015a07e, type: 3}
     - target: {fileID: 1497822949403692044, guid: 5f788bfd369b342469358eb55375e8a9, type: 3}
       propertyPath: sfxSounds.Array.data[4].Name
       value: WallOpen
@@ -1611,12 +1611,44 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: ad8a4f611ba54954983fae4727a9c375, type: 3}
     - target: {fileID: 1497822949403692044, guid: 5f788bfd369b342469358eb55375e8a9, type: 3}
       propertyPath: sfxSounds.Array.data[5].Name
-      value: Test
+      value: Win
       objectReference: {fileID: 0}
     - target: {fileID: 1497822949403692044, guid: 5f788bfd369b342469358eb55375e8a9, type: 3}
       propertyPath: sfxSounds.Array.data[5].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 88985bace8668b64b92b24fc8cc26c09, type: 3}
+      objectReference: {fileID: 8300000, guid: 3b98cf54c17460a449bfe02ce2f96b5f, type: 3}
+    - target: {fileID: 1497822949403692044, guid: 5f788bfd369b342469358eb55375e8a9, type: 3}
+      propertyPath: sfxSounds.Array.data[6].Name
+      value: Lose
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497822949403692044, guid: 5f788bfd369b342469358eb55375e8a9, type: 3}
+      propertyPath: sfxSounds.Array.data[6].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 13a1c85038b0a334cb4b7c68728cada9, type: 3}
+    - target: {fileID: 1497822949403692044, guid: 5f788bfd369b342469358eb55375e8a9, type: 3}
+      propertyPath: sfxSounds.Array.data[7].Name
+      value: MonkeyTalk
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497822949403692044, guid: 5f788bfd369b342469358eb55375e8a9, type: 3}
+      propertyPath: sfxSounds.Array.data[7].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: ad00f8eb934a57f49b9560441d98797a, type: 3}
+    - target: {fileID: 1497822949403692044, guid: 5f788bfd369b342469358eb55375e8a9, type: 3}
+      propertyPath: sfxSounds.Array.data[8].Name
+      value: Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497822949403692044, guid: 5f788bfd369b342469358eb55375e8a9, type: 3}
+      propertyPath: sfxSounds.Array.data[8].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: ad00f8eb934a57f49b9560441d98797a, type: 3}
+    - target: {fileID: 1497822949403692044, guid: 5f788bfd369b342469358eb55375e8a9, type: 3}
+      propertyPath: musicSounds.Array.data[0].Name
+      value: Theme
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497822949403692044, guid: 5f788bfd369b342469358eb55375e8a9, type: 3}
+      propertyPath: musicSounds.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2984274d17c01824186872d7fb0d4ae8, type: 3}
     - target: {fileID: 1497822949403692045, guid: 5f788bfd369b342469358eb55375e8a9, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1667,7 +1699,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1497822949568541858, guid: 5f788bfd369b342469358eb55375e8a9, type: 3}
       propertyPath: m_Volume
-      value: 1
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f788bfd369b342469358eb55375e8a9, type: 3}
@@ -4163,7 +4195,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2058174831
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4180,10 +4212,10 @@ RectTransform:
   m_Father: {fileID: 1420380097}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 275, y: -300}
+  m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2058174832
 MonoBehaviour:
