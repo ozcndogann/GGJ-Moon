@@ -8,7 +8,8 @@ public class Bullet : MonoBehaviour
     public Rigidbody rb;
     public float speed;
     public TrailRenderer trail;
-    public GameObject particle;
+    public GameObject particle,Exploding;
+    GameObject explodingObject;
     Vector3 targetPosition;
     public enemyHealth enemyH;
     public static int h = 10;
@@ -45,21 +46,25 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Tuval")
         {
+            explodingObject = Instantiate(Exploding, new Vector3(collision.transform.position.x, collision.transform.position.y, collision.transform.position.z),Quaternion.identity);
             Destroy(collision.gameObject);
             Shoot.TuvalCounter++;
         }
         if (collision.gameObject.tag == "Oven")
         {
+            explodingObject = Instantiate(Exploding, new Vector3(collision.transform.position.x, collision.transform.position.y, collision.transform.position.z), Quaternion.identity);
             Destroy(collision.gameObject);
             Shoot.OvenCounter++;
         }
         if (collision.gameObject.tag == "Baloon")
         {
+            explodingObject = Instantiate(Exploding, new Vector3(collision.transform.position.x, collision.transform.position.y, collision.transform.position.z), Quaternion.identity);
             Destroy(collision.gameObject);
             Shoot.BaloonCounter++;
         }
         if (collision.gameObject.tag == "Boss")
         {
+            explodingObject = Instantiate(Exploding, new Vector3(collision.transform.position.x, collision.transform.position.y, collision.transform.position.z), Quaternion.identity);
             LevelScript.BossCounter++;
             h--;
             Debug.Log("Hit");
