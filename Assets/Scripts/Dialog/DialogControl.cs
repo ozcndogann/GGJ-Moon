@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class DialogControl : MonoBehaviour
 {
@@ -13,9 +14,10 @@ public class DialogControl : MonoBehaviour
     [SerializeField] private GameObject dialogUI;
     public static bool playersTurn;
     public static bool enemysTurn;
+    private PlayerInput _playerInput;
     void Start()
     {
-        
+        _playerInput = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>();
     }
 
     
@@ -32,13 +34,15 @@ public class DialogControl : MonoBehaviour
         //{
         //    dialogUI.SetActive(false);
         //}
-        if (dialogState % 2 == 0)
+        if (dialogState % 2 == 0/* && Cinematic.isCineOn*/)
         {
+            _playerInput.enabled = false;
             playersTurn = true;
             enemysTurn = false;
         }
-        else if(dialogState % 2 == 1)
+        else if(dialogState % 2 == 1/* && Cinematic.isCineOn*/)
         {
+            _playerInput.enabled = false;
             enemysTurn = true;
             playersTurn = false;
         }

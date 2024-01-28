@@ -6,14 +6,16 @@ public class CamFlw : MonoBehaviour
     [SerializeField] private Transform target;
     [SerializeField] private float smoothTime;
     private Vector3 _currentVelocity = Vector3.zero;
-    GameObject player;
-    GameObject artist;
+    GameObject player, artist, chef, balooner, boss;
 
     private void Awake()
     {
         _offset = transform.position - target.position;
         player = GameObject.FindGameObjectWithTag("Player");
         artist = GameObject.FindGameObjectWithTag("Artist");
+        chef = GameObject.FindGameObjectWithTag("Chef");
+        balooner = GameObject.FindGameObjectWithTag("Balooner");
+        boss = GameObject.FindGameObjectWithTag("Boss");
     }
 
     private void LateUpdate()
@@ -33,7 +35,31 @@ public class CamFlw : MonoBehaviour
         }
         else if (DialogControl.enemysTurn)
         {
-            Vector3 targetPosition = artist.transform.position + _offset;
+            if (LevelScript.Completed1)
+            {
+                Vector3 targetPosition = chef.transform.position + _offset;
+                transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref _currentVelocity, smoothTime);
+            }
+            else if (LevelScript.Completed2)
+            {
+                Vector3 targetPosition = balooner.transform.position + _offset;
+                transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref _currentVelocity, smoothTime);
+            }
+            else if (LevelScript.Completed3)
+            {
+                Vector3 targetPosition = boss.transform.position + _offset;
+                transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref _currentVelocity, smoothTime);
+            }
+            else
+            {
+                Vector3 targetPosition = artist.transform.position + _offset;
+                transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref _currentVelocity, smoothTime);
+            }
+            
+        }
+        else
+        {
+            Vector3 targetPosition = player.transform.position + _offset;
             transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref _currentVelocity, smoothTime);
         }
     }
