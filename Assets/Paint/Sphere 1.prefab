@@ -240,4 +240,5 @@ MonoBehaviour:
   speed: 50
   trail: {fileID: 8766409216572777214}
   particle: {fileID: 199316, guid: 5469fb10a06f91d41983cc406b50ee4c, type: 3}
+  Exploding: {fileID: 114476, guid: 225085907981d1a4f9901b6ced5b2657, type: 3}
   enemyH: {fileID: 0}
