@@ -5,11 +5,10 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager Instance;
-
-    public Sound[] musicSounds, sfxSounds;
+    public Sounds[] musicSounds, sfxSounds;
     public AudioSource musicSource, sfxSource;
 
+    public static AudioManager Instance;
     private void Awake()
     {
         if (Instance == null)
@@ -25,10 +24,15 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         PlayMusic("ThemeMusic");
+        
+    }
+    private void Update()
+    {
+        Debug.Log(musicSource.volume);
     }
     public void PlayMusic(string name)
     {
-        Sound s = Array.Find(musicSounds, x => x.name == name);
+        Sounds s = Array.Find(musicSounds, x => x.Name == name);
         if (s == null)
         {
             Debug.Log("Music not found");
@@ -41,7 +45,7 @@ public class AudioManager : MonoBehaviour
     }
     public void PlaySfx(string name)
     {
-        Sound s = Array.Find(sfxSounds, x => x.name == name);
+        Sounds s = Array.Find(sfxSounds, x => x.Name == name);
         if (s == null)
         {
             Debug.Log("Music not found");
@@ -62,6 +66,7 @@ public class AudioManager : MonoBehaviour
     public void MusicVolume(float volume)
     {
         musicSource.volume = volume;
+        
     }
     public void SFXVolume(float volume)
     {
