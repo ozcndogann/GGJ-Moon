@@ -11,6 +11,8 @@ TagManager:
   - Chef
   - Baloon
   - Boss
+  - Tuval
+  - Oven
   layers:
   - Default
   - TransparentFX

@@ -78,9 +78,14 @@ public class enemyAI : MonoBehaviour
         {
             Animator.SetBool("isRunning", true);
         }
+
         else
         {
             Animator.SetBool("isRunning", false);
+            if (gameObject.tag == "Artist")
+            {
+                transform.position = new Vector3(transform.position.x, 2.3f, transform.position.z);
+            }
         }
         //Check for sight and attack range
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
