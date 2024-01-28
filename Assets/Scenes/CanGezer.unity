@@ -3972,6 +3972,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &338530264 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1750605180508364995, guid: ef755de8f874ff44d9ba22138aaf97b5, type: 3}
+  m_PrefabInstance: {fileID: 338530260}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &344522969
 GameObject:
   m_ObjectHideFlags: 0
@@ -11232,6 +11243,7 @@ MonoBehaviour:
   dialogState4: 0
   nextButton: {fileID: 338530262}
   dialogUI: {fileID: 338530261}
+  Instructiontext: {fileID: 338530264}
 --- !u!4 &1160099657 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6510635593416116556, guid: ed18eacbf5bb4514d8a6b7a36c669520, type: 3}
