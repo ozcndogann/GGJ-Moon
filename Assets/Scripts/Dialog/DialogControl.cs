@@ -8,7 +8,7 @@ public class DialogControl : MonoBehaviour
 {
     string[] dialogs = new string[] { "Matt", "Joanne", "Robert" };
     public TMP_Text DialogTMP;
-    [SerializeField] private int dialogState;
+    [SerializeField] private int dialogState ;
     [SerializeField] private GameObject nextButton;
     [SerializeField] private GameObject dialogUI;
     public static bool playersTurn;
@@ -30,12 +30,12 @@ public class DialogControl : MonoBehaviour
         //{
         //    dialogUI.SetActive(false);
         //}
-        if (dialogState%2 == 0)
+        if (dialogState % 2 == 0)
         {
             playersTurn = true;
             enemysTurn = false;
         }
-        else
+        else if(dialogState % 2 == 1)
         {
             enemysTurn = true;
             playersTurn = false;
