@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using StarterAssets;
 using UnityEngine.InputSystem;
-
+using UnityEngine.SceneManagement;
 public class enemyAI : MonoBehaviour
 {
     public NavMeshAgent agent;
@@ -126,6 +126,7 @@ public class enemyAI : MonoBehaviour
                     playerAnimator.SetBool("Die", true);
                     Animator.SetBool("isVictory", true);
                     gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+                    StartCoroutine(Restart());
                 }
             }
             else
@@ -134,7 +135,10 @@ public class enemyAI : MonoBehaviour
             }
         }
     }
-
+    IEnumerator Restart() {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene(0);
+    }
     private void Patroling()
     {
         //if (!walkPointSet) SearchWalkPoint();
