@@ -25,6 +25,8 @@ public class DialogControl : MonoBehaviour
         if (dialogs.Length - 1 == dialogState)
         {
             nextButton.SetActive(false);
+            playersTurn = true;
+            enemysTurn = false;
         }
         //if (dialogState ==  && dialogState ==  && dialogState ==  && dialogState == )
         //{
