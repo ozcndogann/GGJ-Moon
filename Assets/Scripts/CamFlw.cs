@@ -13,7 +13,7 @@ public class CamFlw : MonoBehaviour
     {
         _offset = transform.position - target.position;
         player = GameObject.FindGameObjectWithTag("Player");
-        player = GameObject.FindGameObjectWithTag("Artist");
+        artist = GameObject.FindGameObjectWithTag("Artist");
     }
 
     private void LateUpdate()
