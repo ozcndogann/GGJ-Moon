@@ -16,16 +16,16 @@ public class LevelScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Shoot.EnemyCounter);
-        if (Shoot.EnemyCounter == 5)
+        Debug.Log(Shoot.TuvalCounter);
+        if (Shoot.TuvalCounter == 5)
         {
             Completed1 = true;
         }
-        if(Shoot.EnemyCounter == 10)
+        if(Shoot.OvenCounter == 10)
         {
             Completed2 = true;
         }
-        if (Shoot.EnemyCounter == 15)
+        if (Shoot.BaloonCounter == 15)
         {
             Completed3 = true;
         }

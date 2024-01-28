@@ -43,10 +43,20 @@ public class Bullet : MonoBehaviour
     }
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.tag == "EnemyTag")
+        if (collision.gameObject.tag == "Tuval")
         {
             Destroy(collision.gameObject);
-            Shoot.EnemyCounter++;
+            Shoot.TuvalCounter++;
+        }
+        if (collision.gameObject.tag == "Oven")
+        {
+            Destroy(collision.gameObject);
+            Shoot.OvenCounter++;
+        }
+        if (collision.gameObject.tag == "Baloon")
+        {
+            Destroy(collision.gameObject);
+            Shoot.BaloonCounter++;
         }
         if (collision.gameObject.tag == "Boss")
         {

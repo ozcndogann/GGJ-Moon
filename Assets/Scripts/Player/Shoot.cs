@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
-    public static int EnemyCounter;
+    public static int TuvalCounter,OvenCounter,BaloonCounter;
     public GameObject bullet;
     private StarterAssetsInputs _input;
     public GameObject spawnpos;
