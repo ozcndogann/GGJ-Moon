@@ -122,6 +122,7 @@ public class enemyAI : MonoBehaviour
                 if (HittingTimer >= 1.5f)
                 {
                     _playerInput.enabled = false;
+                    AudioManager.Instance.PlaySfx("Lose");
                     playerAnimator.SetBool("Die", true);
                     Animator.SetBool("isVictory", true);
                     gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;

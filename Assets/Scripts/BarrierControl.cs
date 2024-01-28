@@ -32,6 +32,7 @@ public class BarrierControl : MonoBehaviour
 
         if (LevelScript.Completed1)
         {
+            AudioManager.Instance.PlaySfx("Win");
             StartCoroutine(WFS());
         }
     }
