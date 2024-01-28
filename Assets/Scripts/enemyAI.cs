@@ -94,7 +94,7 @@ public class enemyAI : MonoBehaviour
         if (!Animator.GetBool("isDead") && !Animator.GetBool("isVictory"))
         {
             if (!playerInSightRange /*&& !playerInAttackRange*/) Patroling();
-            else if (playerInSightRange /*&& !playerInAttackRange*/ && Vector3.Distance(playerTransform.transform.position, transform.position) >= 1.5f)
+            else if (playerInSightRange /*&& !playerInAttackRange*/ && Vector3.Distance(playerTransform.transform.position, transform.position) >= .9f)
             {
                 transform.LookAt(new Vector3(playerTransform.transform.position.x, transform.position.y, playerTransform.transform.position.z));
                 Animator.SetBool("isStarted", true);
@@ -108,8 +108,8 @@ public class enemyAI : MonoBehaviour
 
             }
 
-            else if (/*playerInAttackRange &&*/ playerInSightRange && Vector3.Distance(playerTransform.transform.position, transform.position) < 1.5f) AttackPlayer();
-            if (!playerInSightRange || Vector3.Distance(playerTransform.transform.position, transform.position) >= 1.5f)
+            else if (/*playerInAttackRange &&*/ playerInSightRange && Vector3.Distance(playerTransform.transform.position, transform.position) < .9f) AttackPlayer();
+            if (!playerInSightRange || Vector3.Distance(playerTransform.transform.position, transform.position) >= .9f)
             {
                 if (HittingTimer >= 1.5f)
                 {

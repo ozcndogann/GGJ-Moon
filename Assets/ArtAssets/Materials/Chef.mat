@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Monke 1
+  m_Name: Chef
   m_Shader: {fileID: 4800000, guid: a2a06e22c08354d9699356710b69ca9c, type: 3}
   m_ValidKeywords:
   - DIFFUSE_PER_PIXEL
@@ -34,6 +34,7 @@ Material:
   - _SPECULARUV_UV1
   m_InvalidKeywords:
   - _ALPHATEST_ON
+  - _IGNOREMAINTEXALPHA_ON
   - _RECEIVE_SHADOWS_OFF
   - _SPECULAR_SETUP
   - _SURFACE_TYPE_TRANSPARENT
@@ -101,7 +102,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 7706e3529d9bba64eba4c7fdc7a871d9, type: 3}
+        m_Texture: {fileID: 2800000, guid: 62f86980944d9f64dbe9615fe54bb4f6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MatCapTex:
@@ -208,7 +209,7 @@ Material:
     - _HeightColorsHeight: 0
     - _HeightColorsSpace: 0
     - _HeightColorsThickness: 0
-    - _IgnoreMainTexAlpha: 0
+    - _IgnoreMainTexAlpha: 1
     - _Layer1Alpha: 1
     - _Layer1Blend: 0
     - _Layer1Brightness: 1
