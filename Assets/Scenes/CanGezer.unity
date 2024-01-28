@@ -4033,6 +4033,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6131859430696037115, guid: ef755de8f874ff44d9ba22138aaf97b5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1156957645}
+    - target: {fileID: 6131859430696037115, guid: ef755de8f874ff44d9ba22138aaf97b5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DialogNext
+      objectReference: {fileID: 0}
     - target: {fileID: 6131859431004666907, guid: ef755de8f874ff44d9ba22138aaf97b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -11247,6 +11255,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogTMP: {fileID: 338530263}
   dialogState: 0
+  dialogState1: 0
+  dialogState2: 0
+  dialogState3: 0
+  dialogState4: 0
   nextButton: {fileID: 338530262}
   dialogUI: {fileID: 338530261}
 --- !u!4 &1160099657 stripped
